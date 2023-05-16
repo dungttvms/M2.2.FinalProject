@@ -1,0 +1,248 @@
+* {
+    font-family: Poppins;}
+
+
+
+.MuiGrid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+
+}
+
+.Logo_Header {
+    display: flex;
+
+    color: #FCD15F; width: 120px;
+        font-weight: bold;
+        font-size: 40px;
+}
+.Search_container {
+align-items: right;
+
+}
+.Input_Header {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.Input_Header::placeholder {
+    color: #999;
+}
+
+.Input_Header:focus {
+    outline: none;
+    border-color: #4285f4;
+    background-color: #fff;
+}
+
+.Search_Header {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4285f4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.Search_Header:hover {
+    background-color: #3367d6;
+}
+
+.Search_Header:focus {
+    outline: none;
+    background-color: #1c4ea2;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+.btn-container button {
+    margin-right: 20px;
+
+}
+.select-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn_btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #4285f4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 100px;
+    
+}
+
+.btn_btn:hover {
+    background-color: #3367d6;
+}
+
+.btn_btn:focus {
+    outline: none;
+    background-color: #1c4ea2;
+}
+
+.input-group-prepend {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-group-text {
+    background-color: #e9ecef;
+    padding: 8px;
+    border: none;
+}
+
+.custom-select {
+    padding: 8px;
+    
+    border: none;
+    border-radius: 4px;
+    width: 200px;
+}
+
+
+.custom-select:hover {
+    border-color: #adb5bd;
+}
+
+
+.custom-select:focus {
+    border-color: #80bdff;
+    outline: none;
+}
+
+
+.custom-select option {
+    background-color: #fff;
+    color: #000;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+.loadmore-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.loadmore-btn:hover {
+    background-color: darkred;
+}
+
+.loadmore-btn:active {
+    background-color: crimson;
+}
+
+@media (max-width: 960px) {
+    .MuiGrid-item {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .MuiGrid-item {
+        flex-basis: calc(100% - 20px);
+    }
+}
+
+.movie-card {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 10;
+}
+
+.movie-title {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.movie-image {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.movie-rating,
+.movie-release-date {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.button-detail {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.button-detail:hover {
+    background-color: #0056b3;
+}
+
+.movie-description {
+    font-size: 14px;
+    margin-top: 10px;
+}
