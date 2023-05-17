@@ -36,7 +36,7 @@ align-items: center;
 }
 .Input_Header {
     
-    width: 500px;
+    width: 30%;
     padding: 8px;
     margin-right: 8px;
     border: 1px solid white;
@@ -215,14 +215,14 @@ align-items: center;
 }
 
 @media (max-width: 960px) {
-    .MuiGrid-item {
+    .MuiGrid-item .footer-container {
         margin: 4px;
         flex-basis: calc(50% - 20px);
     }
 }
 
 @media (max-width: 600px) {
-    .MuiGrid-item {
+    .MuiGrid-item .footer-container {
         margin: 4px;
         flex-basis: calc(100% - 20px);
     }
@@ -333,4 +333,68 @@ justify-content: left;
 
 .footer-name .footer-address .footer-phone .footer-email {
     padding: 8px;
+}
+
+.horizontal-line {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+@media only screen and (max-width: 375px) {
+    .footer-container {
+        padding: 20px;
+    }
+
+    .footer-logo {
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .footer-introduce {
+        display: none;
+    }
+    .footer-info {
+        text-align: center;
+    }
+
+    .text-introduce {
+        font-size: 12px;
+    }
+
+    .footer-name,
+    .footer-address,
+    .footer-phone,
+    .footer-email {
+        font-size: 12px;
+    }
+}
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.footer-logo {
+    width: 200px;
+}
+
+.footer-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 320px) {
+    .footer-info {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+    .footer-logo {
+        width: 150px;
+    }
 }

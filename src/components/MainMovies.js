@@ -117,7 +117,7 @@ export default function MainMovies() {
           <option value="highToLow">Highest to Lowest</option>
           <option value="lowToHigh">Lowest to Highest</option>
         </select>
-        <hr className="cut-line" />
+
         <div className="Search_container">
           <input
             className="Input_Header"
@@ -132,6 +132,7 @@ export default function MainMovies() {
         </div>
       </Grid>
       <br />
+      <div class="horizontal-line"></div>
       <br />
       <Grid className="card_container">
         <Grid container spacing={2}>
