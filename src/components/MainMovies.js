@@ -91,13 +91,33 @@ export default function MainMovies() {
   };
 
   return (
-    <div>
-      <Grid className="container">
-        <img
-          className="Logo_Header"
-          src="LogoSmartVina.PNG"
-          alt="Logo The Movie DB"
-        />
+    <div className="total_container">
+      <Grid className="header_container">
+        <img className="Logo_Header" src="logo.png" alt="Logo The Movie DB" />
+        <div className="btn_btn">
+          <Button onClick={loadNewestMovies}>
+            <h2 className="text_btn">Newest</h2>
+          </Button>
+        </div>
+        <div className="btn_btn">
+          <Button onClick={loadTopRateMovies}>
+            <h2 className="text_btn">Ratting</h2>
+          </Button>{" "}
+        </div>
+        <div className="btn_btn">
+          <Button onClick={loadNowPlayingMovies}>
+            <h2 className="text_btn">Now Playing</h2>
+          </Button>
+        </div>
+
+        <select
+          className="custom-select"
+          onChange={(e) => handleRateMovies(e.target.value)}
+        >
+          <option value="highToLow">Highest to Lowest</option>
+          <option value="lowToHigh">Lowest to Highest</option>
+        </select>
+        <hr className="cut-line" />
         <div className="Search_container">
           <input
             className="Input_Header"
@@ -107,71 +127,47 @@ export default function MainMovies() {
             onChange={handleSearchMoviesChange}
           />
           <button onClick={handleSearchMovies} className="Search_Header">
-            Search Movies
+            SEARCH
           </button>
         </div>
       </Grid>
       <br />
       <br />
-      <Grid className="btn_container">
-        <Button className="btn_btn" onClick={loadNewestMovies}>
-          Newest
-        </Button>
-        <Button className="btn_btn" onClick={loadTopRateMovies}>
-          Ratting
-        </Button>
-        <Button className="btn_btn" onClick={loadNowPlayingMovies}>
-          Now Playing
-        </Button>
-        <div className="input-group-prepend">
-          <label className="input-group-text" htmlFor="inputGroupSelect01">
-            Sort By Rating
-          </label>
-        </div>
-        <select
-          className="custom-select"
-          id="inputGroupSelect01"
-          onChange={(e) => handleRateMovies(e.target.value)}
-        >
-          <option value="highToLow">Highest to Lowest</option>
-          <option value="lowToHigh">Lowest to Highest</option>
-        </select>
-      </Grid>
-      <br />
-      <br />
-      <br />
-
-      <Grid container spacing={2}>
-        {movies.map((movie) => (
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={4}
-            key={movie.id}
-            className="movie-card"
-          >
-            <h2 className="movie-title">{movie.title}</h2>
-            <img
-              className="movie-image"
-              src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-              alt={movie.title}
-            />
-            <p className="movie-rating"> Vote Average: {movie.vote_average}</p>
-            <p className="movie-release-date">
-              Release Date: {movie.release_date}
-            </p>
-            <button
-              className="button-detail"
-              onClick={() => handleOpenModal(movie.id)}
+      <Grid className="card_container">
+        <Grid container spacing={2}>
+          {movies.map((movie) => (
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              key={movie.id}
+              className="movie-card"
             >
-              View Trailer
-            </button>
-            <p className="movie-decription">
-              {movie.overview.slice(0, 100)}...
-            </p>
-          </Grid>
-        ))}
+              <h2 className="movie-title">{movie.title}</h2>
+              <img
+                className="movie-image"
+                src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                alt={movie.title}
+              />
+              <div className="p-text">
+                <p className="movie-rating">
+                  Vote Average: {movie.vote_average}
+                </p>
+                <p className="movie-release-date">
+                  Release Date: {movie.release_date}
+                </p>
+              </div>
+
+              <button
+                className="button-detail"
+                onClick={() => handleOpenModal(movie.id)}
+              >
+                View Trailer
+              </button>
+            </Grid>
+          ))}
+        </Grid>
       </Grid>
       <TrailerModal
         showModal={showModal}
@@ -184,7 +180,7 @@ export default function MainMovies() {
         type="button"
         onClick={handleLoadMoreMovies}
       >
-        Load More
+        <p className="loadmore-text">LOAD MORE MOVIES</p>
       </button>
     </div>
   );
